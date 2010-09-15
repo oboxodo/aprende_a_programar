@@ -587,9 +587,9 @@ class LearnToProgramTutorial
   
   def generateNumbers
     para do <<-END_PARAGRAPH
-      Now that you've gotten everything #{makeLink('setup', :generateSetup)},
-      let's write a program!  Open up your favorite text
-      editor and type in the following:
+      Ahora que tiene todo #{makeLink('instalado', :generateSetup)},
+      ¡vamos a escribir un programa! Abra su editor de texto favorito
+      y escriba lo siguiente:
       END_PARAGRAPH
     end
     prog false do <<-END_CODE
@@ -597,11 +597,11 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Save your program (yes, that's a program!) as #{input 'calc.rb'}
-      (the <strong>.rb</strong> is what we usually put at the end of
-      programs written in Ruby).  Now run your program by typing #{input 'ruby calc.rb'}
-      into your command line.  It should have put a #{output '3'} on your screen.
-      See, programming isn't so hard, now is it?
+      Guarde su programa (si, ¡eso es un programa!) como #{input 'calc.rb'}
+      (el <strong>.rb</strong> es lo que usualmente opnemos al final de
+      los programas escritos con Ruby). Ahora ejecute su programa escribiendo
+      #{input 'ruby calc.rb'} en la linea de comandos. Debería obtener un #{output '3'}
+      #en su pantalla. ¿Lo ve?, programar no es tan difícil, ¿cierto?
       END_PARAGRAPH
     end
     h2 {'Introduction to '+(code 'puts')}
