@@ -587,9 +587,9 @@ class LearnToProgramTutorial
   
   def generateNumbers
     para do <<-END_PARAGRAPH
-      Now that you've gotten everything #{makeLink('setup', :generateSetup)},
-      let's write a program!  Open up your favorite text
-      editor and type in the following:
+      Ahora que tiene todo #{makeLink('instalado', :generateSetup)},
+      ¡vamos a escribir un programa! Abra su editor de texto favorito
+      y escriba lo siguiente:
       END_PARAGRAPH
     end
     prog false do <<-END_CODE
@@ -597,17 +597,17 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Save your program (yes, that's a program!) as #{input 'calc.rb'}
-      (the <strong>.rb</strong> is what we usually put at the end of
-      programs written in Ruby).  Now run your program by typing #{input 'ruby calc.rb'}
-      into your command line.  It should have put a #{output '3'} on your screen.
-      See, programming isn't so hard, now is it?
+      Guarde su programa (si, ¡eso es un programa!) como #{input 'calc.rb'}
+      (el <strong>.rb</strong> es lo que usualmente opnemos al final de
+      los programas escritos con Ruby). Ahora ejecute su programa escribiendo
+      #{input 'ruby calc.rb'} en la linea de comandos. Debería obtener un #{output '3'}
+      #en su pantalla. ¿Lo ve?, programar no es tan difícil, ¿cierto?
       END_PARAGRAPH
     end
-    h2 {'Introduction to '+(code 'puts')}
+    h2 {'Introducción a '+(code 'puts')}
     para do <<-END_PARAGRAPH
-      So what's going on in that program?  I'm sure you can guess what the
-      #{code '1+2'} does; our program is basically the same as:
+      ¿Cómo es que funciona ese programa? Seguramente puede adivinar qué es lo que
+      #{code '1+2'} hace; nuestro programa es básicamente lo mismo que:
       END_PARAGRAPH
     end
     prog false do <<-END_CODE
@@ -615,20 +615,20 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      #{code 'puts'} simply writes onto the screen whatever comes after it.
+      #{code 'puts'} simplemente escribe en la pantalla lo que sea que escribamos a continuación.
       END_PARAGRAPH
     end
-    h2 {'Integer and Float'}
+    h2 {'Enteros y flotantes'}
     para do <<-END_PARAGRAPH
-      In most programming languages (and Ruby is no exception)
-      numbers without decimal points are called <dfn>integers</dfn>, and
-      numbers with decimal points are usually called
-      <dfn>floating-point numbers</dfn>,
-      or more simply, <dfn>floats</dfn>.
+      En la mayoría de los lenguajes de programación (y Ruby no es la excepción)
+      los números sin decimales son llamados <dfn>integers</dfn> (enteros), y
+      los números con punto decimal normalmente son llamados
+      <dfn>números de punto flotante</dfn>,
+      o simplemente, <dfn>floats</dfn>.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Here are some integers:
+      Aquí hay algunos enteros:
       END_PARAGRAPH
     end
     prog false do <<-END_CODE
@@ -639,7 +639,7 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      And here are some floats:
+      Y aquí hay algunos flotantes:
       END_PARAGRAPH
     end
     prog false do <<-END_CODE
@@ -650,30 +650,28 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      In practice, most programs don't use floats; only integers.
-      (After all, no one wants to look at 7.4 emails, or browse 1.8
-      webpages, or listen to 5.24 of their favorite songs...)
-      Floats are used more for academic purposes (physics experiments and such)
-      and for 3D graphics.  Even most money programs use integers; they just
-      keep track of the number of pennies!
+      En la práctica, la mayoría de los programas no usan flotantes; sólo enteros.
+      (Después de todo, nadie quiere leer 7,4 emails, o navegar 1,8 páginas,
+      o escuchar 5,24 de sus canciones favoritas...)
+      Los flotantes se usan más con propósitos académicos (como por ejemplo
+      experimentos científicos) y para gráficos en 3D. Incluso la mayoría de los
+      programas financieros usan enteros; ¡simplemente llevan un registro de los
+      centavos!
       END_PARAGRAPH
     end
-    h2 {'Simple Arithmetic'}
+    h2 {'Aritmética simple'}
     para do <<-END_PARAGRAPH
-      So far, we've got all the makings of a simple calculator.
-      (Calculators always use floats, so if you want your computer
-      to act just like a calculator, you should also use floats.)  For addition
-      and subtraction, we use <kbd>+</kbd> and <kbd>-</kbd>,
-      as we saw.  For multiplication, we use <kbd>*</kbd>,
-      and for division we use <kbd>/</kbd>.  Most keyboards have
-      these keys in the numeric keypad on the far right side.
-      If you have a smaller keyboard or a laptop, though, you can just use
-      <kbd>Shift 8</kbd> and <kbd>/</kbd> (same key as the
-      <kbd>?</kbd> key).  Let's try to expand our calc.rb program a little.
-      Type in the following and then run it.
+      Hasta ahora, tenemos todo lo que necesita una calculadora simple.
+      (Las calculadoras siempre usan números de punto flotante, así que si
+      quiere que su computadora actúe como una calculadora, también debería
+      usar flotantes). Pasa suma y resta, usamos <kbd>+</kbd> y <kbd>-</kbd>,
+      como ya lo vimos. Para la multiplicación, usamos <kbd>*</kbd>, y para
+      la división usamos <kbd>/</kbd>. La mayoría de los teclados tienen estas
+      teclas en el teclado numérico a la derecha. Intentemos expandir un poco
+      nuestro programa calc.rb. Escribe lo siguiente y ejecútalo:
       END_PARAGRAPH
     end
-    prog [], 'This is what the program returns:' do <<-END_CODE
+    prog [], 'Esto es lo que retorna el programa:' do <<-END_CODE
       puts 1.0 + 2.0
       puts 2.0 * 3.0
       puts 5.0 - 8.0
@@ -681,12 +679,12 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      (The spaces in the program are not important; they just make
-      the code easier to read.)  Well, that wasn't too surprising.
-      Now let's try it with integers:
+      (Los espacios en el programa no son importantes; simplemente
+      hacen que el código sea más fácil de leer). Bueno, eso no
+      fue muy sorprendente. Ahora probemos con enteros:
       END_PARAGRAPH
     end
-    prog [], 'Mostly the same, right?' do <<-END_CODE
+    prog [], 'Básicamente lo misno, ¿no?' do <<-END_CODE
       puts 1+2
       puts 2*3
       puts 5-8
@@ -694,27 +692,28 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Uh... except for that last one!
-      But when you do arithmetic with integers, you'll get integer answers.
-      When your computer can't get the "right" answer, it always rounds down.
-      (Of course, #{output '4'} <em>is</em> the right answer in integer arithmetic
-      for #{code '9/2'}; just maybe not the answer you were expecting.)
+      Uh... ¡excepto por el último!
+      Pero cuando se hace aritmética con enteros, se obtienen enteros.
+      Cuando su computadora no puede obtener la respuesta "correcta",
+      siempre redondea hacia abajo. (Por supuesto, #{output '4'} <em>es</em>
+      la respuesta correcta en aritmética con enteros para #{code '9/2'};
+      simplemente tal vez no sea el resultado que esperaba).
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Perhaps you're wondering what integer division is good for.  Well, let's
-      say you're going to the movies, but you only have $9.  Here in
-      Portland, you can see a movie at the Bagdad for 2 bucks.  How many movies
-      can you see there?  #{code '9/2'}... #{output '4'} movies.  4.5
-      is definitely <em>not</em> the right answer in this case; they will
-      not let you watch half of a movie, or let half of you in to
-      see a whole movie... some things just aren't divisible.
+      Tal vez se pregunte para qué es útil la división entera. Bueno, digamos
+      que va al cine, pero sólo tiene $9. Aquí en Portland, puede ver una
+      película en el Bagdad por $2. ¿Cuántas películas puede ver allí?
+      #{code '9/2'}... #{output '4'} películas. 4.5 definitivamente <em>no</em>
+      es la respuesta correcta en este caso; no le dejarán ver la mitad de
+      una película, o dejar que una mitad suya vea la película entera...
+      algunas cosas simplemente no son divisibles.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      So now experiment with some programs of your own!  If you want
-      to write more complex expressions, you can use parentheses.
-      For example:
+      ¡Así que ahora experimente con algunos programas por su cuenta!
+      Si quiere escribir expresiones más complejas, puede usar paréntesis.
+      Por ejemplo:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -722,26 +721,26 @@ class LearnToProgramTutorial
       puts 98 + (59872 / (13*8)) * -52
       END_CODE
     end
-    h2 {'A Few Things to Try'}
+    h2 {'Algunas cosas para intentar'}
     para do
-      puts 'Write a program which tells you:'
+      puts 'Escriba un programa que le diga:'
     end
     ul do
-      li {'how many hours are in a year?'}
-      li {'how many minutes are in a decade?'}
-      li {'how many seconds old are you?'}
-      li {'how many chocolates do you hope to eat in your life? <br />'+
-          '<em><strong>Warning:</strong>  This part of the program could take a while to compute!</em>'}
+      li {'¿cuántas horas hay en un año?'}
+      li {'¿cuántos minutos hay en una década?'}
+      li {'¿cuántos segundos de edad tiene usted?'}
+      li {'¿cuántos chocolates espera comer en su vida? <br />'+
+          '<em><strong>Advertencia:</strong> ¡Esta parte del programa puede tomar tiempo para computarse!</em>'}
     end
     para do
-      puts "Here's a tougher question:"
+      puts "Aquí hay una pregunta más difícil:"
     end
     ul do
-      li {"If I am #{(Time.now - Time.mktime(1976,8,3)).to_i / 1000000} million seconds old, how old am I?"}
+      li {"Si tengo #{(Time.now - Time.mktime(1976,8,3)).to_i / 1000000} millones de segundos de edad, ¿cuántos años tengo?"}
     end
     para do <<-END_PARAGRAPH
-      When you're done playing around with numbers, let's have a look
-      at some #{makeLink('letters', :generateLetters)}.
+      Cuando termine de jugar con números, hechemos un vistazo
+      a algunas #{makeLink('letras', :generateLetters)}.
       END_PARAGRAPH
     end
   end
