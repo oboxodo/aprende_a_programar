@@ -3925,28 +3925,26 @@ class LearnToProgramTutorial
   
   def generateBlocksProcs
     para do <<-END_PARAGRAPH
-      This is definitely one of the coolest features of Ruby.  Some
-      other languages have this feature, though they may call it
-      something else (like <dfn>closures</dfn>), but most of the
-      more popular ones don't, and it's a shame.
+      Esta es definitivamente una de las mejores herramientas de Ruby.
+      Algunos lenguajes tienen esta herramienta, pienso que la llamaran
+      de otra forma(como <dfn>closures</dfn>), pero la mayoría de los mas
+      populares no lo hacen, una pena.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      So what is this cool new thing?  It's the ability to take
-      a <dfn>block</dfn> of code (code in between #{code 'do'}
-      and #{code 'end'}), wrap it up in an object (called a
-      <dfn>proc</dfn>), store it in a variable or pass it to a
-      method, and run the code in the block whenever you feel
-      like (more than once, if you want).  So it's kind of like
-      a method itself, except that it isn't bound to an object
-      (it <em>is</em> an object), and you can store it or pass
-      it around like you can with any object.  I think it's example
-      time:
+      Entonces que es esto que es tan bueno? Esto tiene la habilidad
+      de tomar un <dfn>bloque</dfn> de código(código entre #{code 'do'} 
+      y #{code 'end'}), que rodean esto en un objeto (llamado <dfn>proc</dfn>),
+      lo guarda en una variable o lo pasa a un método, y ejecuta el código en un
+      bloque donde te guste(mas de una vez, si quieres.) Entonces esto es 
+      un tipo método en si mismo, excepto que no es compartido con otro objeto mas
+      (esto <em>es</em> un objeto), y puedes almacenar o pasar este como cualquier 
+      otro objeto. Es tiempo de un ejemplo:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
       toast = Proc.new do
-        puts 'Cheers!'
+        puts 'Aplausos!'
       end
       
       toast.call
@@ -3955,15 +3953,15 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      So I created a proc (which I think is supposed to be short for
-      "procedure", but far more importantly, it rhymes with "block")
-      which held the block of code, then I #{code 'call'}ed the proc
-      three times.  As you can see, it's a lot like a method.
+      Entonces creé un proc (el cual pienzo debería ser pronunciado como
+      "procedimiento", pero mas importante, esto rima con "bloque") el cual
+      contiene un bloque de código, y #{code 'call'}ed ('llame') el proc tres
+      veces. Como puedes ver, esto es como un método.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Actually, it's even more like a method than I have shown you, because
-      blocks can take parameters:
+      En realidad, esto es mas que métodos que he mostrado, porque los bloques pueden
+      tomar parametros:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -3976,24 +3974,24 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Ok, so we see what blocks and procs are, and how to use them, but what's
-      the point?  Why not just use methods?  Well, it's because there are some
-      things you just can't do with methods.  In particular, you can't pass
-      methods into other methods (but you can pass procs into methods), and methods
-      can't return other methods (but they can return procs).  This is simply because
-      procs are objects; methods aren't.
+      Muy bien, entonces vemos que son los bloques y procs, y como usarlos, pero 
+      cual es el punto? Porque no utilizar simples métodos? Bueno, esto es porque
+      hay mas cosas que no podemos hacer con simples métodos. En particular, no 
+      puedes pasar métodos a otros métodos(pero puedes pasar procs dentro de métodos),
+      y métodos no pueden retornar otros métodos(pero ellos pueden retornar procs). Esto
+      es simplemente porque procs son objetos; los métodos no son objetos
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      (By the way, is any of this looking familiar?  Yep, you've seen blocks before... when
-      you learned about iterators.  But let's talk more about that in a bit.)
+      (De hecho, es algo familiar para ti? Sí, tu has visto bloques antes.. cuando aprendiste
+       sobre iteradores. Pero vamos a hablar un poco mas acerca de esto en breve)	
       END_PARAGRAPH
     end
     h2 { 'Methods Which Take Procs' }
     para do <<-END_PARAGRAPH
-      When we pass a proc into a method, we can control how, if, or how many times we call
-      the proc.  For example, let's say there's something we want to do before and after
-      some code is run:
+      Cuando pasamos un proc en un un metodo, podemos controlar como, o cuantas veces llamamos
+      el proc. Por ejemplo, vamos a decir que queremos hacer antes y después que cierto código
+      se esta ejecutando:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -4016,23 +4014,24 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Maybe that doesn't appear particulary fabulous... but it is.  :-)
-      It's all too common in programming to have strict requirements about what
-      must be done when.  If you want to save a file, for example, you have to
-      open the file, write out the information you want it to have, and then close
-      the file.  If you forget to close the file, Bad Things(tm) can happen.  But
-      each time you want to save or load a file, you have to do the same thing:
-      open the file, do what you <em>really</em> want to do, then close the file.
-      It's tedious and easy to forget.  In Ruby, saving (or loading) files works
-      similarly to the code above, so you don't have to worry about anything but
-      what you actually want to save (or load).  (In the next chapter I'll show you
-      where to find out how to do things like save and load files.)
+      Quizás esto no parezca muy fabulozo... pero lo es. :-)
+      Es común en programacion tener requerimientos estrictos acerca de 
+      que debe ser hecho y cuando. Si quieres salvar un archivo, por ejemplo,
+      tienes que abrir el archivo, escribir la informacion que quieres que 
+      contenga este, y luego cerrar el archivo. Si olvidas cerrar el archivo, 
+      Puede Tener malas consecuencias. Pero cada vez que quieras salvar un archivo
+      o cargar uno, tu tienes que hacer lo mismo: abrir el archivo, hacer lo que
+      <em>realmente</em> quieres hacer , luego cerrar el archivo. Esto es tedioso
+      y facil de olvidar. En Ruby, guardando (o cargando) archivos trabaja similar
+      al codigo anterior, entonces no tienes que preocuparte por nada mas que por
+      lo que quieres guardar(o subir). (En el próximo capitulo mostrare donde 
+      encontrar info sobre guardar y cargar archivos.)
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      You can also write methods which will determine how many times, or even
-      <em>if</em> to call a proc.  Here's a method which will call the proc passed in
-      about half of the time, and another which will call it twice:
+      También pudes escribir metodos los cuales cuantas veces, o incluso <em>sí</em>
+      llamar a un proc. Aquí hay un metodo el cual llama a un proc pasado en la mitad
+      de tiempo, y otro el cual sera llamara a este dos veces:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -4062,23 +4061,22 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      (If you reload this page a few times, you'll see the output change.)  These are some of
-      the more common uses of procs which enable us to do things we simply could not have done
-      using methods alone.  Sure, you could write a method to wink twice, but you couldn't write
-      one to just do <em>something</em> twice!
+      (Si recargas esta pagina un par de veces, veras que la salida cambiara.) Estos son
+      algunos de los casos comunes de uso de procs lo que le permite hacer cosas utilizando
+      simplemente metodos no podriamos hacerlo. Seguramente, podrías escribir un metodo para
+      hacer algo dos veces, pero no podías escribir uno que haga <em>algo</em> dos veces!
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Before we move on, let's look at one last example.  So far the procs
-      we have passed in have been fairly similar to each other.  This time
-      they will be quite different, so you can see how much such a method
-      depends on the procs passed into it.  Our
-      method will take some object and a proc, and will call the proc
-      on that object.  If the proc returns false, we quit; otherwise
-      we call the proc with the returned object.  We keep doing this
-      until the proc returns false (which it had better do eventually,
-      or the program will crash).  The method will return the last
-      non-false value returned by the proc.
+      Antes de continuar, vamos a ver un último ejemplo. Los procs que 
+      hemos visto son bastante similares. Es tiempo de ver algo diferente, 
+      entonces vamos a ver cuanto un metodo depende de un proc pasado a este.
+      Nuestro metodo tomara algun objeto y un proc, y llamara a este proc 
+      sobre este objeto. Si el proc retorna falso, finalizamos; en otro caso
+      llamaremos al proc con el objeto. Continuaremos haciendo esto hasta
+      que el proc retorne falso(esto es mejor, o el programa finalizara con 
+      error). El metodo retornara el último valor no falso retornado por 
+      el proc.
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -4099,9 +4097,9 @@ class LearnToProgramTutorial
         if lastNumber <= 0
           false
         else
-          array.pop                         #  Take off the last number...
-          array.push lastNumber*lastNumber  #  ...and replace it with its square...
-          array.push lastNumber-1           #  ...followed by the next smaller number.
+          array.pop                         #  Quitar el último número...
+          array.push lastNumber*lastNumber  #  ...y reemplazar este con el último número elevado al cuadrado...
+          array.push lastNumber-1           #  ...seguido por un número menor.
         end
       end
       
@@ -4110,12 +4108,12 @@ class LearnToProgramTutorial
       end
       
       puts doUntilFalse([5], buildArrayOfSquares).inspect
-      puts doUntilFalse('I\\'m writing this at 3:00 am; someone knock me out!', alwaysFalse)
+      puts doUntilFalse('Estoy escribiendo esto a las 3:00 am; alguien que lo finalize!', alwaysFalse)
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Ok, so that was a pretty weird example, I'll admit.  But it shows how differently
-      our method acts when given very different procs.
+      Esta bien, este es un ejemplo bastante raro, debo admitirlo. Pero esto mustra como 
+      actua diferente nuetro metodo cuando le damos diferentes procs.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
