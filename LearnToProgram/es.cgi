@@ -2266,59 +2266,64 @@ class LearnToProgramTutorial
   
   def generateArrays
     para do <<-END_PARAGRAPH
-      Let's write a program which asks us to type in as many words
-      as we want (one word per line, continuing until we just press
-      <kbd>Enter</kbd> on an empty line), and which then repeats
-      the words back to us in alphabetical order.  OK?
+      Vamos a escribir un programa el cual nos pida  tipear tantas
+      palabras como nosotros querramos(una palabra por linea), 
+      continuando hasta que oprimamos <kbd>Enter</kbd> en una linea
+      vacia), el cual luego nos devolvera las palabras en orden 
+      alfabetico. OK?
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      So... first we'll&mdash;uh... um... hmmm...  Well, we could&mdash;er...
-      um...
+      Entonces... nosotros primero vamos &mdash;uh... um... hmmm...  Bueno
+      , nosotros podríamos&mdash;er...
+      um... 
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      You know, I don't think we can do it.  We need a way to store
-      an unknown amount of words, and how to keep track of them all
-      together, so they don't get mixed up with other variables.  We
-      need to put them in some sort of a list.  We need <dfn>arrays</dfn>.
+      Usted sabe, no pienso que podamos hacer esto. Necesitamos una 
+      forma de almacenar una cantidad desconocida de palabras, y como
+      obtener todas ellas juntas, entonces no se confundan con otras 
+      variables. Necesitamos colocarlas en un tipo de lista. Lo que
+      necesitamos son <dfn>arrays</dfn>. 
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      An array is just a list in your computer.  Every slot in
-      the list acts like a variable:  you can see what object
-      a particular slot points to, and you can make it point to a
-      different object.  Let's take a look at some arrays:
+      Un array es solo una lista en su computadora. Cada  posicion en 
+      la lista actua como una variable: puedes ver que objeto en 
+      particular apunta a cada posicion, y puedes hacer que este apunte
+      a un objeto diferente. Vamos a echar un vistazo a algunos arrays:
       END_PARAGRAPH
     end
     prog false do <<-END_CODE
       []
       [5]
-      ['Hello', 'Goodbye']
+      ['Hola', 'Adios']
       
-      flavor = 'vanilla'             #  This is not an array, of course...
-      [89.9, flavor, [true, false]]  #  ...but this is.
+      flavor = 'vanilla'             #  Esto no es un array, porsupuesto...
+      [89.9, sabor, [true, false]]  #  ...pero esto si lo es.
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      So first we have an empty array, then an array holding
-      a single number, then an array holding two strings.
-      Next, we have a simple assignment; then an
-      array holding three objects, the last
-      of which is the array #{code '[true, false]'}.  Remember,
-      variables aren't objects, so our last array is really
-      pointing to float, a <em>string</em>, and an array.  Even if we
-      were to set #{code 'flavor'} to
-      point to something else, that wouldn't change the
-      array.
+      Entonces primero tenemos un array vacio, luego un array
+      conteniendo un simple numero, luego un array que contiene
+      dos strings. Siguiendo, tenemos una simple asignacion, luego
+      un array conteniendo tres objetos, de los cuales el último 
+      es el array #{code '[true, false]'}. Recuerda, variables
+      no son objetos, entonces nuestro ultimo array es en realidad
+      un punto flotante, un <em>string</em>, y un array. Aun asi si
+      nosotros hubieramos seteado #{code 'sabor'} a punto o algo mas, 
+      esto no hubiera cambiado el array.
+
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      To help us find a particular object in an array, each
-      slot is given an index number.  Programmers (and, incidentally,
-      most mathematicians) start counting from zero, though,
-      so the first slot in the array is slot zero.  Here's
-      how we would reference the objects in an array:
+      Para ayudarnos a encontrar un objeto particular en un array,
+      para cada posicion es dado un indice numerico. Programadores
+      (and, por cierto, la mayoría de los matemáticos) comienzan 
+      contando desde cero, por lo que la primera posicion del array
+      es cero.  Aquí es como nosotros deberíamos referenciar los 
+      objetos en un array:
+
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -2328,109 +2333,109 @@ class LearnToProgramTutorial
       puts names[0]
       puts names[1]
       puts names[2]
-      puts names[3]  #  This is out of range.
+      puts names[3]  #  Este esta fuera del rango.
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      So, we see that #{code 'puts names'} prints each name in
-      the array #{code 'names'}.  Then we use #{code 'puts names[0]'}
-      to print out the "first" name in the array, and
-      #{code 'puts names[1]'} to print the "second"... I'm sure this seems
-      confusing, but you <em>do</em> get used to it.  You just have to really
-      start <em>thinking</em> that counting begins at zero, and
-      stop using words like "first" and "second".
-      If you go out to a five-course meal, don't talk about
-      the "first" course; talk about course zero
-      (and in your head, be thinking #{code 'course[0]'}).
-      You have five fingers on your right hand, and their
-      numbers are 0, 1, 2, 3, and 4.  My wife and I are
-      jugglers.  When we juggle six clubs, we are juggling
-      clubs 0-5.  Hopefully in the next few months, we'll
-      be able to juggle club 6 (and thus be juggling seven
-      clubs between us).  You'll know you've got it when you
-      start using the word "zeroth".  :-) Yes, it's a real
-      word; ask any programmer or mathematician.
+      Entonces, nosotros vemos que #{code 'puts names'} imprime
+      cada nombre en el array  #{code 'names'}. Luego usamos
+      #{code 'puts names[0]'} para imprimir el "primer" nombre en 
+      el array, y #{code 'puts names[1]'} para imprimir el "segundo"
+      ... Estoy seguro que esto parece confuso, pero tu <em>puedes</em> 
+      acostumbrarte a esto. Tienes que realmente solo comenzar <em>
+      pensando</em> que el contador comienza en cero, y dejas de usar
+      palabras como "primero" y "segundo"
+      Si tu vas a un menu de cinco platos, no hablas acerca del "primer"
+      curso, hablas acerca del curso cero(y en tu cabeza, estas pensando
+      #{code 'course[0]'}). Tu tienes cinco dedos en tu mano derecha,
+      y sus números son 0, 1, 2, 3 y 4. Mi espoza y yo somos malabaristas.
+      Cuando hacemos malabares con seis objetos, nosotros estamos con 
+      los objetos 0-5. Esperamos en los próximos meses poder manejarnos
+      con el objeto 6(y por lo tanto trataremos de manejarnos con 7 objetos) 
+      Tu sabras que lo has aprendido cuando comienzes a usar la palabra 
+      "cero". Sí, esto es real; pregunta a cualquier programador o 
+       matemático.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Finally, we tried #{code 'puts names[3]'}, just to see what
-      would happen.  Were you expecting an error?  Sometimes when
-      you ask a question, your question doesn't make sense (at
-      least to your computer); that's when you get an error.
-      Sometimes, however, you can ask a question and the answer
-      is <em>nothing</em>.  What's in slot three?  Nothing.
-      What is #{code 'names[3]'}?  #{code 'nil'}:  Ruby's way
-      of saying "nothing".  #{code 'nil'} is a special object
-      which basically means "not any other object."
+      Finalmente, tratamos #{code 'puts names[3]'}, solo para ver 
+      que podría suceder. Estabamos esperando un error? Algunas veces
+      cuando preguntas algo, tu pregunta no tiene sentido(al menos para
+      tu computadora); ahí es cuando obtienes un error.      
+      Algunas veces, en cambio, tu puedes preguntar algo y la 
+      respuesta es <em>nada</em>. Que es la posicion tres? Nada.
+      Que es  #{code 'names[3]'}?  #{code 'nil'}: Es la forma Ruby
+      de decir "nada". #{code 'nil'}  es un objeto especial lo cual
+      significa "no hay ningún objeto".
+
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      If all this funny numbering of array slots is getting to
-      you, fear not!  Often, we can avoid them completely by
-      using various array methods, like this one:
+      Si todo este divertido numerado de posiciones esta molestandote,
+      no te preocupes! También, podemos evitar esto completamente usando
+      varios metodos array, como el que sigue:
       END_PARAGRAPH
     end
     h2 {"The Method #{code 'each'}"}
     para do <<-END_PARAGRAPH
-      #{code 'each'} allows us to do something (whatever we
-      want) to #{code 'each'} object the array points to.  So, if we
-      want to say something nice about each language in the array
-      below, we'd do this:
+      #{code 'each'} nos permite hacer algo(lo que quieramos)
+      a #{code 'each'} objeto que apunte. Asi, is queremos decir algo
+      bueno acercah de cada lenguaje en el array abajo, podriamos hacer
+      esto:      
       END_PARAGRAPH
     end
     prog do <<-END_CODE
-      languages = ['English', 'German', 'Ruby']
+      lenguajes = ['English', 'German', 'Ruby']
       
-      languages.each do |lang|
-        puts 'I love ' + lang + '!'
-        puts 'Don\\'t you?'
+      lenguajes.each do |leng|
+        puts 'Me gusta ' + leng + '!'
+        puts 'A ti?'
       end
       
-      puts 'And let\\'s hear it for C++!'
+      puts 'Y vamos a escuchar esto para C++!'
       puts '...'
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      So what just happened?  Well, we were able to go through
-      every object in the array without using any numbers, so
-      that's definitely nice.  Translating into English, the above
-      program reads something like:  For #{code 'each'} object
-      in #{code 'languages'}, point the variable #{code 'lang'}
-      to the object and then #{code 'do'} everything I tell you to,
-      until you come to the #{code 'end'}.  (Just so you know,
-      C++ is another programming language.  It's much harder to
-      learn than Ruby; usually, a C++ program will be many times
-      longer than a Ruby program which does the same thing.)
+      Que acaba de ocurrir? Bueno, tenemos permitido ir a travez
+      de cada objeto en el array sin utilizar ningun número, así 
+      esto es definitivamente mejor. Traducido al castellano 
+      diriamos que: Para cada #{code 'each'} objeto en #{code 'lenguajes'}
+      , apunta la variable #{code 'leng'} al objeto y entonces #{code 'do'}
+      (do = hacer) todo lo que te digo, hasta que llegues al #{code 'end'}.
+      (Solo para que sepas, C++ es otro lenguaje de programacion. Este es 
+       mucho mas difícil de aprender que Ruby; por lo general, un programa
+       hecho en C++ sera muchas veces mas extenso que un programa en Ruby
+       que haga la misma funcionalidad)
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      You might be thinking to yourself, "This is a lot like
-      the loops we learned about earlier."  Yep, it's similar.
-      One important difference is that the method #{code 'each'}
-      is just that:  a method.  #{code 'while'} and #{code 'end'}
-      (much like #{code 'do'}, #{code 'if'}, #{code 'else'}, and all the other
+      Tu estaras pensando para ti mismo, "Esto es un monton de bucles 
+      como los que hemos aprendido antes". Sí, esto es similar. 
+      Una diferencia importante es que el método #{code 'each'} es solo eso:
+      un método. #{code 'while'} y #{code 'end'} (tal como #{code 'do'}, 
+      #{code 'if'}, #{code 'else'}, y todos las otras 
       <span class="L2Pcode"><span class="L2Pkeyword">#{@@KEYWORD_COLOR}</span></span>
-      words) are not methods.  They are a fundamental part of the Ruby
-      language, just like #{code '='} and parentheses; kind of
-      like punctuation marks in English.
+      palabras no lo son. Ellos son una parte fundamental del lenguaje Ruby
+      , tal como #{code '='} y las parentesis; tipos de puntuacion como en Ingles
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      But not #{code 'each'}; #{code 'each'} is just another
-      array method.  Methods like #{code 'each'} which "act like"
-      loops are often called <dfn>iterators</dfn>.
+      Pero no  #{code 'each'}; #{code 'each'} is solo otro metodo del array.
+      Metodos como #{code 'each'} los cuales 'actuan como' bucles son a menudo
+      llamados <dfn>iterators</dfn>.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      One thing to notice about iterators is that they are
-      always followed by #{code 'do'}...#{code 'end'}.
-      #{code 'while'} and #{code 'if'} never had a #{code 'do'}
-      near them; we only use #{code 'do'} with iterators.
+      Algo para saber sobre iteradores es que estos son siempre seguidos por 
+      #{code 'do'}...#{code 'end'}. 
+      #{code 'while'} y #{code 'if'} nunca tuvieron un #{code 'do'} cerca de ellos;
+      nosotros solo usamos #{code 'do'} con iteradores
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Here's another cute little iterator, but it's not an
-      array method... it's an integer method!
+      Aquí hay otro pequeño iterador, pero esto no es un metodo array... es un metodo
+      integer!
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -2439,29 +2444,24 @@ class LearnToProgramTutorial
       end
       END_CODE
     end
-    h2 {'More Array Methods'}
+    h2 {'Mas métodos Array'}
     para do <<-END_PARAGRAPH
-      So we've learned #{code 'each'},
-      but there are many other array methods... almost as
-      many as there are string methods!  In fact, some of
-      them (like #{code 'length'}, #{code 'reverse'},
-      #{code '+'}, and #{code '*'})
-      work just like they do for strings, except that they
-      operate on the slots of the array rather than the
-      letters of the string.  Others, like #{code 'last'}
-      and #{code 'join'}, are specific to arrays.  Still
-      others, like #{code 'push'} and #{code 'pop'},
-      actually change the array.  And just as with
-      the string methods, you don't have to remember
-      all of these, as long as you can remember where to
-      find out about them (right here).
+      Entonces hemos aprendido sobre #{code 'each'}, pero hay muchos metodos
+      mas... al menos muchos como metodos strings! De hecho, algunos de ellos
+      (como #{code 'length'}, #{code 'reverse'}, #{code '+'}, y #{code '*'})
+      trabajan igual que lo hacen para strings, excepto que ellos operan sobre
+      las posiciones de un array y no sobre letras de un string. Otros, como
+      #{code 'last'} y #{code 'join'}, son especificos de arrays. Aún otros, 
+      como #{code 'push'} y #{code 'pop'}, en realidad cambian el array. Y
+      asi como con metodos para strings, no tienen que recordar todos, puedes
+      recurrir a recordar sobre ellos(justo aquí)
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      First, let's look at #{code 'to_s'} and #{code 'join'}.
-      #{code 'join'} works much like #{code 'to_s'} does, except
-      that it adds a string in between the array's objects.
-      Let's take a look:
+      Primero, vamos a echar un vistazo a #{code 'to_s'} y #{code 'join'}.
+      #{code 'join'} trabaja tal como #{code 'to_s'} lo hace, excepto que 
+      este agrega un string entre los objetos del array.
+      Vamos a mirar un poco:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -2481,34 +2481,28 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      As you can see, #{code 'puts'} treats arrays differently
-      from other objects:  it just calls #{code 'puts'} on each
-      of the objects in the array.  That's why #{code 'puts'}ing
-      an empty array 200 times doesn't do anything; the array doesn't
-      point to anything, so there's nothing to #{code 'puts'}.  (Doing
-      nothing 200 times is still doing nothing.)
-      Try #{code 'puts'}ing an array containing other arrays;
-      does it do what you expected?
+      Como puedes ver, #{code 'puts'} trata el array diferente  a otros objetos: 
+      este solo llama #{code 'puts'} sobre cada uno de los objetos en el array. 
+      Esto es porque #{code 'puts'}ing un array vacio 200 veces no hace nada; el 
+      array no apunta a nada; entonces no hay nada para #{code 'puts'}. (Hacer nada
+      200 veces continua siendo hacer nada)
+      Trata de usar #{code 'puts'} en un array conteniendo otros arrays; hace lo 
+      que esperabas que hiciera?
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Also, did you notice that I left out the empty strings when
-      I wanted to #{code 'puts'} a blank line?  It does the same
-      thing.
+      También, te habras dado cuenta que deje fuera el string vacio cuando quise 
+      hacer #{code 'puts'} de una linea en blanco? Esto hace lo mismo.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      Now let's take a look at #{code 'push'}, #{code 'pop'},
-      and #{code 'last'}.  The methods #{code 'push'} and #{code 'pop'}
-      are sort of opposites,
-      like #{code '+'} and #{code '-'} are.  #{code 'push'} adds
-      an object to the end of your array, and #{code 'pop'}
-      removes the last object from the array (and tell you
-      what it was).  #{code 'last'} is similar to #{code 'pop'}
-      in that it tells you what's at the end of the array,
-      except that it leaves the array alone.
-      Again, #{code 'push'} and #{code 'pop'} <em>actually
-      change the array</em>:
+      Ahora vamos a echar un vistazo a #{code 'push'}, #{code 'pop'}, y  #{code 'last'}.  
+      Los metodos #{code 'push'} y #{code 'pop'} son una suerte de metodos opuestos como
+      lo son #{code '+'} y #{code '-'}. #{code 'push'} agrega un objeto al final del array,
+      y #{code 'pop'} quita el último objeto desde el array(y te dice que objeto es). 
+      #{code 'last'} es similar a #{code 'pop'} en el que este te indica que hay al final 
+      del array, excepto que este deja el array. De nuevo, #{code 'push'} y #{code 'pop'} <em>
+      en realidad cambian el array</em>:
       END_PARAGRAPH
     end
     prog do <<-END_CODE
@@ -2525,34 +2519,28 @@ class LearnToProgramTutorial
       puts favorites.length
       END_CODE
     end
-    h2 {'A Few Things to Try'}
+    h2 {'Unas pocas cosas a probar'}
     para do <<-END_PARAGRAPH
-      &bull; Write the program we talked about at the very beginning
-      of this chapter.<br />
-      <em><strong>Hint:</strong>  There's a lovely
-      array method which will give you a sorted version of an
-      array:  </em>#{code 'sort'}<em>.  Use it!</em>
+      &bull; Escribe el programa del cual hablamos al principio de este capitulo.<br />
+      <em><strong>Consejo:</strong>  Hay un hermoso metodo de arrays el cual te dara la 
+      version ordenada de un array:  </em>#{code 'sort'}<em>.  Usalo!</em>
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      &bull; Try writing the above program <em>without</em> using
-      the #{code 'sort'} method.  A large part of programming is
-      solving problems, so get all the practice you can!
+      &bull; Trata escribiendo el programa sugerido anteriormente <em>sin</em> usar
+      el metodo #{code 'sort'} .  Una gran parte de la programacion es la solucion de
+      problemas, entonces obtienes toda la practica que puedas!
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      &bull; Rewrite your Table of Contents program (from the chapter
-      on #{makeLink 'methods', :generateMethods}).  Start the program
-      with an array holding all of the information for your Table
-      of Contents (chapter names, page numbers, etc.).  Then print
-      out the information from the array in a beautifully formatted
-      Table of Contents.
+      &bull; Reescribe tu programa Tabla de contenidos (desde el capítulo sobre #{makeLink 'methods', :generateMethods}).
+      Comienza el programa con un array conteniendo toda la informacion de tu Tabla de Contenidos(capitulo nombres, 
+      capitulo numeros, etc.). Entonces imprime la información desde el array en una bien formada Tabla de Contenidos.
       END_PARAGRAPH
     end
     para do <<-END_PARAGRAPH
-      So far we have learned quite a number of different methods.
-      Now it's time to learn how to
-      #{makeLink 'make our own', :generateDefMethod}.
+	  Hemos aprendido un numero de diferentes metodos.
+      Ahora es tiempo de aprender como #{makeLink 'hacerlo por nosotros mismos', :generateDefMethod}.
       END_PARAGRAPH
     end
   end
