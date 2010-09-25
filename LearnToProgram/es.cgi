@@ -597,10 +597,10 @@ class LearnToProgramTutorial
       END_CODE
     end
     para do <<-END_PARAGRAPH
-      Guarde su programa (si, ¡eso es un programa!) como #{input 'calc.rb'}
-      (el <strong>.rb</strong> es lo que usualmente opnemos al final de
+      Guarde su programa (sí, ¡eso es un programa!) como #{input 'calc.rb'}
+      (el <strong>.rb</strong> es lo que usualmente ponemos al final de
       los programas escritos con Ruby). Ahora ejecute su programa escribiendo
-      #{input 'ruby calc.rb'} en la linea de comandos. Debería obtener un #{output '3'}
+      #{input 'ruby calc.rb'} en la línea de comandos. Debería obtener un #{output '3'}
       #en su pantalla. ¿Lo ve?, programar no es tan difícil, ¿cierto?
       END_PARAGRAPH
     end
