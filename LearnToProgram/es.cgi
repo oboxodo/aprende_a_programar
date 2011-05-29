@@ -4506,7 +4506,7 @@ class LearnToProgramTutorial
       END_PARAGRAPH
     end
     h2 {'Fin'}
-    para do <<-END_PARAGRAPHi
+    para do <<-END_PARAGRAPH
       Use esto para el bien y no lo malo. :-)  Y si encuentras este tutorial
       útil (o confuso, o si encuentras un error),
       END_PARAGRAPH
